@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>The Week · Training Planner</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="The Week">
+<meta name="application-name" content="The Week">
+<meta name="theme-color" content="#F6F1E7">
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAYAAAA9zQYyAAADhUlEQVR4nO3dzW3bWBSAUWaQAmabNlJGOkiF6WbKyDodZBbzE8GQZEmhRN6P56wMGLCfoO9d0Ab59OH7l08/F4j4Y+sFwJoETYqgSRE0KYImRdCkCJoUQZMiaFIETYqgSRE0KYImRdCkCJoUQZMiaFIETYqgSRE0KYImRdCkCJoUQZMiaFIETYqgSRE0KYImRdCkCJoUQZMiaFIETYqgSRE0KYImRdCkCJoUQZMiaFIETYqgSRE0KYImRdCkCJoUQZPycesFsL4/v/118Xs/vn5+4Upe78P3L59+br0IfrkW45qqYQv6Aa+K7tmKUQv6DpWQ3yqF7Y/CG1VjrjGh33GUkCtT2oRmWZbOxhX0FZU3+UgEfcERYy68ZkGTIugzCpPqqARNiqBJETQpgiZF0KQImhRBn1G5r+GIBE2KoC8wpWcS9BWinkfQ/K+wgQX9jh9fPyfe6KMQ9I3ujdpG2IZHsB5w77kXU+7eK2xAQb/IhKgLQbvkIEXQLzBhOlcI+snE/FqCfiIxv56gn0TM2xD0E4h5O4JemZi3JegViXl7gl6JmPdB0CsQ834I+jeJeV8E/RvEvD+CfpCY90nQDxDzfgn6TmLeN0HfoRxz4V7oZRH0zbaM2eNctxP0DbaO+dzXnCfod+wlZm4j6CvEPI+gLxDzTII+Q8xzCfqNPcdc/rfhWgR9Ys8xcxtB/0vMDYJexFxy+KDF3HLooMXcc9igxdx0yKCnxvysjVDaYIcLemrM3OZQQRdiXntT1DbZYYIuxLz2z6vFvCwHCboUM9flP5KiHvMjr6+8ydITuh7zI7+nHPOyhCf0EWJ+695P5ypKBn3EmPlH7pJDzMeWClrMZIIWM8sSCVrM/Gd80GLm1MetF/CorR8YFfM+jZ/QWxDzfo0M2mUGl4wLWsxcMy7orYh5hlFBbzWdxTzHqKC3IOZZBH2FmOcR9AVinknQZ4h5LkG/IebZBH1CzPONCvqZwYm5YVTQzyLmjnFB7/XQFvZhXNDL4uQgLhsZNFwy/hgDJwdxavyEdnIQp8ZP6FNODiIVNIy/5IBTgiZF0KQImhRBkyJoUgRNiqBJETQpgiZF0KQImhRBkyJoUgRNiqBJETQpgiZF0KQImhRBkyJoUgRNiqBJETQpgiZF0KQImhRBkyJoUgRNiqBJETQpgiZF0KQImhRBkyJoUgRNiqBJETQpfwMoDPg9rX563wAAAABJRU5ErkJggg==">
+<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAYAAAA9zQYyAAADhUlEQVR4nO3dzW3bWBSAUWaQAmabNlJGOkiF6WbKyDodZBbzE8GQZEmhRN6P56wMGLCfoO9d0Ab59OH7l08/F4j4Y+sFwJoETYqgSRE0KYImRdCkCJoUQZMiaFIETYqgSRE0KYImRdCkCJoUQZMiaFIETYqgSRE0KYImRdCkCJoUQZMiaFIETYqgSRE0KYImRdCkCJoUQZMiaFIETYqgSRE0KYImRdCkCJoUQZMiaFIETYqgSRE0KYImRdCkCJoUQZPycesFsL4/v/118Xs/vn5+4Upe78P3L59+br0IfrkW45qqYQv6Aa+K7tmKUQv6DpWQ3yqF7Y/CG1VjrjGh33GUkCtT2oRmWZbOxhX0FZU3+UgEfcERYy68ZkGTIugzCpPqqARNiqBJETQpgiZF0KQImhRBn1G5r+GIBE2KoC8wpWcS9BWinkfQ/K+wgQX9jh9fPyfe6KMQ9I3ujdpG2IZHsB5w77kXU+7eK2xAQb/IhKgLQbvkIEXQLzBhOlcI+snE/FqCfiIxv56gn0TM2xD0E4h5O4JemZi3JegViXl7gl6JmPdB0CsQ834I+jeJeV8E/RvEvD+CfpCY90nQDxDzfgn6TmLeN0HfoRxz4V7oZRH0zbaM2eNctxP0DbaO+dzXnCfod+wlZm4j6CvEPI+gLxDzTII+Q8xzCfqNPcdc/rfhWgR9Ys8xcxtB/0vMDYJexFxy+KDF3HLooMXcc9igxdx0yKCnxvysjVDaYIcLemrM3OZQQRdiXntT1DbZYYIuxLz2z6vFvCwHCboUM9flP5KiHvMjr6+8ydITuh7zI7+nHPOyhCf0EWJ+695P5ypKBn3EmPlH7pJDzMeWClrMZIIWM8sSCVrM/Gd80GLm1MetF/CorR8YFfM+jZ/QWxDzfo0M2mUGl4wLWsxcMy7orYh5hlFBbzWdxTzHqKC3IOZZBH2FmOcR9AVinknQZ4h5LkG/IebZBH1CzPONCvqZwYm5YVTQzyLmjnFB7/XQFvZhXNDL4uQgLhsZNFwy/hgDJwdxavyEdnIQp8ZP6FNODiIVNIy/5IBTgiZF0KQImhRBkyJoUgRNiqBJETQpgiZF0KQImhRBkyJoUgRNiqBJETQpgiZF0KQImhRBkyJoUgRNiqBJETQpgiZF0KQImhRBkyJoUgRNiqBJETQpgiZF0KQImhRBkyJoUgRNiqBJETQpfwMoDPg9rX563wAAAABJRU5ErkJggg==">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F6F1E7;
+    --paper-2:#FCF8F0;
+    --ink:#18130E;
+    --ink-soft:#615747;
+    --ink-faint:#9A8E79;
+    --line:#E5DCCB;
+    --accent:#E64A19;
+    --accent-soft:#FBE3D9;
+    --go:#2E6B47;
+    --go-soft:#DBEAE0;
+    --warn:#B0700A;
+    --warn-soft:#F4E7CC;
+    --shadow:0 1px 0 rgba(24,19,14,.04), 0 18px 40px -28px rgba(24,19,14,.35);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:'Hanken Grotesk',sans-serif;
+    background:
+      radial-gradient(1200px 600px at 85% -10%, rgba(230,74,25,.06), transparent 60%),
+      var(--paper);
+    color:var(--ink);
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+    padding:28px 18px 80px;
+    padding-top:calc(28px + env(safe-area-inset-top, 0px));
+    padding-bottom:calc(80px + env(safe-area-inset-bottom, 0px));
+  }
+  @media(display-mode:standalone){
+    body{padding-top:calc(44px + env(safe-area-inset-top, 0px))}
+  }
+  .wrap{max-width:920px;margin:0 auto}
+
+  /* Header */
+  .top{margin-bottom:22px}
+  .kicker{
+    font-size:12px;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--accent);font-weight:600;margin-bottom:8px;
+  }
+  h1{
+    font-family:'Bricolage Grotesque',sans-serif;
+    font-weight:800;font-size:clamp(38px,8vw,68px);line-height:.92;
+    letter-spacing:-.02em;margin-bottom:14px;
+  }
+  h1 em{font-style:normal;color:var(--accent)}
+  .banner{
+    background:var(--ink);color:var(--paper);
+    border-radius:14px;padding:16px 18px;display:flex;gap:14px;
+    align-items:flex-start;box-shadow:var(--shadow);
+  }
+  .banner .spark{
+    font-family:'Bricolage Grotesque',sans-serif;font-weight:800;
+    font-size:22px;line-height:1;color:var(--accent);flex:none;margin-top:1px;
+  }
+  .banner p{font-size:14.5px;color:#EDE6D8}
+  .banner b{color:#fff;font-weight:700}
+
+  /* Section label */
+  .seclabel{
+    font-family:'Bricolage Grotesque',sans-serif;font-weight:700;
+    font-size:13px;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--ink-soft);margin:30px 2px 12px;display:flex;align-items:center;gap:10px;
+  }
+  .seclabel:before{content:"";width:7px;height:7px;border-radius:50%;background:var(--accent)}
+
+  /* Coverage */
+  .coverage{
+    background:var(--paper-2);border:1px solid var(--line);border-radius:16px;
+    padding:16px;box-shadow:var(--shadow);
+  }
+  .cov-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+  .cov{
+    border-radius:11px;padding:12px 8px;text-align:center;border:1px solid var(--line);
+    background:#fff;transition:.25s ease;position:relative;
+  }
+  .cov .lab{font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:var(--ink-faint)}
+  .cov .mark{
+    font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:18px;
+    margin-bottom:4px;color:var(--ink-faint);
+  }
+  .cov.done{background:var(--go-soft);border-color:#BBD6C5}
+  .cov.done .mark{color:var(--go)}
+  .cov.done .lab{color:var(--go)}
+  .cov.miss{background:var(--accent-soft);border-color:#F3CBBC}
+  .cov.miss .mark{color:var(--accent)}
+  .cov.miss .lab{color:var(--accent)}
+
+  /* Status message */
+  .status{
+    margin-top:12px;border-radius:12px;padding:13px 15px;font-size:14px;
+    display:flex;flex-direction:column;gap:7px;
+  }
+  .status.ok{background:var(--go-soft);color:#1f4d33}
+  .status.warn{background:var(--warn-soft);color:#6f4806}
+  .status .line{display:flex;gap:9px;align-items:flex-start}
+  .status .line b{font-weight:700}
+  .status .dot{flex:none;margin-top:7px;width:6px;height:6px;border-radius:50%;background:currentColor;opacity:.6}
+
+  /* Week grid */
+  .week{display:grid;grid-template-columns:repeat(2,1fr);gap:11px}
+  @media(max-width:560px){.week{grid-template-columns:1fr}}
+  .day{
+    background:var(--paper-2);border:1px solid var(--line);border-radius:14px;
+    padding:13px 14px;box-shadow:var(--shadow);transition:.2s;
+  }
+  .day-head{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:9px}
+  .day-name{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:17px;letter-spacing:-.01em}
+  .runtag{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:600}
+  select{
+    width:100%;font-family:inherit;font-size:14.5px;color:var(--ink);
+    border:1.5px solid var(--line);border-radius:10px;padding:10px 12px;
+    background:#fff;cursor:pointer;appearance:none;font-weight:500;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23615747' stroke-width='2.5'><polyline points='6 9 12 15 18 9'/></svg>");
+    background-repeat:no-repeat;background-position:right 11px center;padding-right:34px;
+  }
+  select:focus{outline:none;border-color:var(--accent)}
+  .tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:9px;min-height:4px}
+  .tag{font-size:10.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;
+    padding:3px 8px;border-radius:20px;background:var(--go-soft);color:var(--go)}
+  .tag.rest{background:#EDE7DA;color:var(--ink-soft)}
+  .day.is-rest{background:#F1ECE0}
+  .day.is-road{background:#F1ECE0;border-style:dashed}
+
+  /* Anchor hints */
+  .anchor{font-size:11px;margin-top:7px;display:flex;align-items:center;gap:5px;color:var(--ink-faint);font-weight:500}
+  .anchor .pin{font-style:normal;font-size:12px}
+  .anchor.swapped{color:var(--warn)}
+
+  /* Collapsibles */
+  details{
+    background:var(--paper-2);border:1px solid var(--line);border-radius:14px;
+    padding:0;box-shadow:var(--shadow);overflow:hidden;
+  }
+  details+details{margin-top:11px}
+  summary{
+    list-style:none;cursor:pointer;padding:15px 17px;display:flex;align-items:center;
+    justify-content:space-between;font-family:'Bricolage Grotesque',sans-serif;
+    font-weight:700;font-size:16px;
+  }
+  summary::-webkit-details-marker{display:none}
+  summary .chev{transition:.2s;color:var(--accent);font-size:20px;line-height:1}
+  details[open] summary .chev{transform:rotate(45deg)}
+  .body{padding:2px 17px 18px;color:var(--ink-soft);font-size:14.5px}
+  .body h4{font-family:'Hanken Grotesk',sans-serif;color:var(--ink);font-size:13px;
+    letter-spacing:.06em;text-transform:uppercase;margin:14px 0 7px;font-weight:700}
+  .body ul{list-style:none;display:flex;flex-direction:column;gap:6px}
+  .body li{display:flex;gap:10px;align-items:flex-start}
+  .body li:before{content:"";flex:none;margin-top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent)}
+  .body .moves li:before{background:var(--go)}
+  .body em{color:var(--ink);font-style:normal;font-weight:600}
+  .body .note{margin-top:13px;font-size:13.5px;background:var(--accent-soft);color:#7a2a10;
+    padding:11px 13px;border-radius:10px}
+
+  /* Footer */
+  .foot{display:flex;justify-content:space-between;align-items:center;margin-top:26px;flex-wrap:wrap;gap:12px}
+  .savestate{font-size:12.5px;color:var(--ink-faint);letter-spacing:.02em}
+  .reset{
+    font-family:inherit;font-size:13px;font-weight:600;color:var(--ink-soft);
+    background:none;border:1.5px solid var(--line);border-radius:9px;padding:9px 15px;cursor:pointer;transition:.2s;
+  }
+  .reset:hover{border-color:var(--accent);color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="top">
+    <div class="kicker">Monday planning · pick your week · keep it honest</div>
+    <h1>The <em>Week</em></h1>
+    <div class="banner">
+      <span class="spark">↗</span>
+      <p><b>Goal smashed before June even started.</b> Sub-30 5k done (26:30 with Chidge), 30 minutes continuous done (7k). This isn't about pushing harder now. It's about keeping the good thing going and not breaking it. Set the week, hit the floor, leave room to recover.</p>
+    </div>
+  </div>
+
+  <div class="seclabel">Coverage, your whole body gets a turn</div>
+  <div class="coverage">
+    <div class="cov-grid">
+      <div class="cov" data-cov="cardio"><div class="mark">·</div><div class="lab">Cardio</div></div>
+      <div class="cov" data-cov="legs"><div class="mark">·</div><div class="lab">Legs</div></div>
+      <div class="cov" data-cov="upper"><div class="mark">·</div><div class="lab">Upper</div></div>
+      <div class="cov" data-cov="core"><div class="mark">·</div><div class="lab">Core</div></div>
+      <div class="cov" data-cov="rest"><div class="mark">·</div><div class="lab">Rest</div></div>
+    </div>
+    <div id="status" class="status"></div>
+  </div>
+
+  <div class="seclabel">Your seven days</div>
+  <div class="week" id="week"></div>
+
+  <div class="seclabel">Fall back on this</div>
+  <details>
+    <summary>The 20-minute "never zero" flow <span class="chev">+</span></summary>
+    <div class="body">
+      <p>On a day everything's gone sideways and you're on a set, in London, or just buried, this is the get-out-of-jail card. No kit, 20 minutes, full body. Pick it in any day's dropdown and it ticks legs, upper and core in one go, so a chaotic week still closes covered.</p>
+      <h4>Warm up · 2 min</h4>
+      <ul><li>Arm circles, leg swings, slow cat-cow, gentle hip circles. Loosen, don't strain.</li></ul>
+      <h4>Main · 3 rounds, 30–45s rest between rounds</h4>
+      <ul class="moves">
+        <li>Bodyweight squats × 12</li>
+        <li>Press-ups × 8 (drop to knees, no shame)</li>
+        <li>Reverse lunges × 8 each side</li>
+        <li>Plank × 30 seconds</li>
+        <li>Glute bridges × 15</li>
+        <li>Dead bug × 8 each side</li>
+      </ul>
+      <h4>Cool down · 2–3 min</h4>
+      <ul><li>Downward dog, cobra, child's pose, seated forward fold, a few slow breaths.</li></ul>
+      <div class="note"><em>The posture and low-belly bit:</em> the plank and dead bug are doing that job. They train the deep core that holds your midsection tight and your posture upright. Move steady, breathe, don't rush them.</div>
+    </div>
+  </details>
+
+  <details>
+    <summary>The Thursday fix: run + legs <span class="chev">+</span></summary>
+    <div class="body">
+      <p>Chidge runs on Thursdays, so you run. But legs need strength work too and there's nowhere clean to put a separate session. The fix: bolt a quick legs circuit onto the end of the run while everything's warm.</p>
+      <h4>The run</h4>
+      <ul><li>3–5k with Chidge, whatever pace suits the day.</li></ul>
+      <h4>Legs finisher · 2 rounds, 12–15 min</h4>
+      <ul class="moves">
+        <li>Goblet squats × 12</li>
+        <li>Romanian deadlifts (bodyweight) × 10</li>
+        <li>Walking lunges × 10 each side</li>
+        <li>Calf raises × 15</li>
+        <li>Wall sit × 30 seconds</li>
+      </ul>
+      <div class="note"><em>Why this works:</em> your muscles are already warm from the run, so the legs circuit slots in naturally. Even one round ticks the "legs" box for the week. Two rounds is the full session.</div>
+    </div>
+  </details>
+
+  <details>
+    <summary>The rules, baked in <span class="chev">+</span></summary>
+    <div class="body">
+      <ul>
+        <li>Most runs <em>easy and conversational</em>, the pace where you could chat. Only about one run in five should be hard.</li>
+        <li><em>Never two hard sessions back to back.</em> This planner flags it if you try.</li>
+        <li>Legs never land on the same day as a hard run. One job per day here, so you can't accidentally double up.</li>
+        <li>Long run grows by <em>no more than 10% a week</em>. 7k to 7.5 to 8, not 7 straight to 10.</li>
+        <li>Cycling is your <em>flex lever</em>, not a daily must. Use it when your legs are sore or you want cardio without the pounding.</li>
+        <li>Rest is a <em>session, not a gap</em>. One or two full days a week. This is where you actually get fitter.</li>
+        <li><em>Never zero.</em> On a wrecked day, the 20-minute fallback keeps the week alive.</li>
+      </ul>
+    </div>
+  </details>
+
+  <div class="foot">
+    <span class="savestate" id="savestate">Saves automatically as you go.</span>
+    <button class="reset" id="reset">Reset to default week</button>
+  </div>
+
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  var DAYS = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"];
+
+  // value -> { label, covers:[], demanding:bool, rest:bool, run:bool }
+  var OPTIONS = {
+    "":        {label:"Pick a session\u2026", covers:[]},
+    "run_easy":{label:"Easy run + core finisher", covers:["cardio","core"], run:true},
+    "run_long":{label:"Long run (easy pace)", covers:["cardio"], demanding:true, run:true},
+    "run_fast":{label:"Faster run + upper body", covers:["cardio","upper"], demanding:true, run:true},
+    "parkrun": {label:"Parkrun 5k", covers:["cardio"], run:true},
+    "run_legs":{label:"Run + legs finisher", covers:["cardio","legs"], demanding:true, run:true},
+    "cycle":   {label:"Cycle (gentle / recovery)", covers:["cardio"]},
+    "lower":   {label:"Lower body strength", covers:["legs"], demanding:true},
+    "upper":   {label:"Upper body strength", covers:["upper"]},
+    "yoga":    {label:"Yoga / mobility / core", covers:["core"]},
+    "fallback":{label:"Fallback: 20-min full-body flow", covers:["legs","upper","core"]},
+    "rest":    {label:"Rest day", covers:[], rest:true},
+    "road":    {label:"On the road / no training", covers:[], rest:true}
+  };
+  var ORDER = ["","run_easy","run_long","run_fast","parkrun","run_legs","cycle","lower","upper","yoga","fallback","rest","road"];
+
+  var TAGLABEL = {cardio:"Cardio",legs:"Legs",upper:"Upper",core:"Core"};
+
+  var DEFAULT = {
+    Monday:"run_long", Tuesday:"upper", Wednesday:"yoga",
+    Thursday:"run_legs", Friday:"cycle", Saturday:"parkrun", Sunday:"rest"
+  };
+
+  var ANCHORS = {
+    Monday:   {usual:"run_long", hint:"Long run day"},
+    Thursday: {usual:"run_legs", hint:"Chidge day"},
+    Saturday: {usual:"parkrun",  hint:"Parkrun morning"}
+  };
+
+  var KEY = "weekly_plan_v1";
+  var plan = {};
+  var memFallback = null; // used if localStorage is blocked (e.g. private mode)
+
+  // ---------- storage (saved on your device) ----------
+  function load(){
+    try{
+      var raw = localStorage.getItem(KEY);
+      if(raw){ return JSON.parse(raw); }
+    }catch(e){ /* private mode or blocked */ }
+    return memFallback;
+  }
+  function save(){
+    memFallback = plan;
+    try{ localStorage.setItem(KEY, JSON.stringify(plan)); }catch(e){}
+    flashSaved();
+  }
+  var saveTimer=null;
+  function flashSaved(){
+    var el=document.getElementById("savestate");
+    el.textContent="Saved.";
+    clearTimeout(saveTimer);
+    saveTimer=setTimeout(function(){ el.textContent="Saves automatically as you go."; },1400);
+  }
+
+  // ---------- build ----------
+  function buildWeek(){
+    var wk=document.getElementById("week");
+    wk.innerHTML="";
+    DAYS.forEach(function(d){
+      var card=document.createElement("div");
+      card.className="day"; card.id="card-"+d;
+      var runMark = (OPTIONS[plan[d]]&&OPTIONS[plan[d]].run) ? '<span class="runtag">Run day</span>' : '';
+      var sel='<select data-day="'+d+'">';
+      ORDER.forEach(function(v){
+        sel+='<option value="'+v+'"'+(plan[d]===v?' selected':'')+'>'+OPTIONS[v].label+'</option>';
+      });
+      sel+='</select>';
+      var anc = ANCHORS[d] ? '<div class="anchor" id="anchor-'+d+'"><span class="pin">📌</span><span class="atxt"></span></div>' : '';
+      card.innerHTML='<div class="day-head"><span class="day-name">'+d+'</span><span class="runslot">'+runMark+'</span></div>'+sel+anc+'<div class="tags" id="tags-'+d+'"></div>';
+      wk.appendChild(card);
+    });
+    wk.querySelectorAll("select").forEach(function(s){
+      s.addEventListener("change",function(){
+        plan[this.getAttribute("data-day")]=this.value;
+        render(); save();
+      });
+    });
+  }
+
+  // ---------- render state ----------
+  function render(){
+    var have={cardio:false,legs:false,upper:false,core:false,rest:false};
+    DAYS.forEach(function(d){
+      var o=OPTIONS[plan[d]]||OPTIONS[""];
+      o.covers.forEach(function(c){ have[c]=true; });
+      if(o.rest) have.rest=true;
+
+      // per-day tags + styling
+      var card=document.getElementById("card-"+d);
+      card.className="day"+(plan[d]==="rest"?" is-rest":"")+(plan[d]==="road"?" is-road":"");
+      var runSlot=card.querySelector(".runslot");
+      runSlot.innerHTML = o.run ? '<span class="runtag">Run day</span>' : '';
+      var tg=document.getElementById("tags-"+d);
+      tg.innerHTML="";
+      if(o.rest){
+        var t=document.createElement("span"); t.className="tag rest";
+        t.textContent = plan[d]==="road" ? "Off, drop the fallback if you can" : "Recovery";
+        tg.appendChild(t);
+      } else {
+        o.covers.forEach(function(c){
+          var t=document.createElement("span"); t.className="tag"; t.textContent=TAGLABEL[c]; tg.appendChild(t);
+        });
+      }
+    });
+
+    // coverage pills
+    document.querySelectorAll(".cov").forEach(function(el){
+      var key=el.getAttribute("data-cov");
+      var done=have[key];
+      el.className="cov "+(done?"done":"miss");
+      el.querySelector(".mark").textContent = done ? "✓" : "○";
+    });
+
+    renderStatus(have);
+    updateAnchors();
+  }
+
+  function renderStatus(have){
+    var box=document.getElementById("status");
+    var warnings=[];
+
+    // 1. no rest at all
+    if(!have.rest){
+      warnings.push("<b>No recovery day this week.</b> Rest is when you get fitter, not weaker. Block out at least one full day.");
+    }
+    // 2. legs missing
+    if(!have.legs){
+      warnings.push("<b>Legs aren't in the plan yet.</b> Even the 20-minute fallback flow covers this. Don't close the week without it.");
+    }
+    // 3. two demanding days adjacent
+    for(var i=0;i<DAYS.length-1;i++){
+      var a=OPTIONS[plan[DAYS[i]]]||{}, b=OPTIONS[plan[DAYS[i+1]]]||{};
+      if(a.demanding && b.demanding){
+        warnings.push("<b>Two hard days back to back</b> ("+DAYS[i]+" and "+DAYS[i+1]+"). Put something easy or a rest day between them.");
+      }
+    }
+
+    var allCovered = have.cardio&&have.legs&&have.upper&&have.core&&have.rest;
+
+    if(warnings.length){
+      box.className="status warn";
+      box.innerHTML = warnings.map(function(w){
+        return '<div class="line"><span class="dot"></span><span>'+w+'</span></div>';
+      }).join("");
+    } else if(allCovered){
+      box.className="status ok";
+      box.innerHTML='<div class="line"><span class="dot"></span><span><b>Balanced and locked in.</b> Every part of you gets a turn and you\'ve left room to recover. That\'s the whole game. Go get it.</span></div>';
+    } else {
+      box.className="status warn";
+      box.innerHTML='<div class="line"><span class="dot"></span><span>Keep filling in days until all five lights go green. You\'re aiming for a full body by Sunday, however the week falls.</span></div>';
+    }
+  }
+
+  // ---------- anchors ----------
+  function updateAnchors(){
+    Object.keys(ANCHORS).forEach(function(day){
+      var el = document.getElementById("anchor-"+day);
+      if(!el) return;
+      var a = ANCHORS[day];
+      var txt = el.querySelector(".atxt");
+      if(plan[day] === a.usual){
+        el.className = "anchor";
+        txt.textContent = a.hint;
+      } else {
+        el.className = "anchor swapped";
+        txt.textContent = "Usually: " + OPTIONS[a.usual].label.toLowerCase();
+      }
+    });
+  }
+
+  // ---------- reset ----------
+  document.getElementById("reset").addEventListener("click",function(){
+    plan = Object.assign({}, DEFAULT);
+    buildWeek(); render(); save();
+  });
+
+  // ---------- init ----------
+  (async function init(){
+    var saved = await load();
+    plan = saved && typeof saved==="object" ? saved : Object.assign({}, DEFAULT);
+    // ensure all days present
+    DAYS.forEach(function(d){ if(!(d in plan)) plan[d]=""; });
+    buildWeek();
+    render();
+  })();
+})();
+</script>
+</body>
+</html>
